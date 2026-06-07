@@ -4,7 +4,7 @@ Here's my collection of JSX scripts for After Effects. These scripts were create
 ## Installation
 After downloading a JSX script, move it to the following location:
 - Windows: `Program Files\Adobe\Adobe After Effects <version>\Support Files\Scripts`
-- MasOS: `Applications/Adobe After Effects <version>/Scripts/ScriptUI Panels`
+- MasOS: `Applications/Adobe After Effects <version>/Scripts`
 
 ## Usage
 To run a JSX script within After Effects...
