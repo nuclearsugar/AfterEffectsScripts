@@ -7,7 +7,7 @@ After downloading a JSX script, move it to the following location:
 - MasOS: `Applications/Adobe After Effects <version>/Scripts/ScriptUI Panels`
 
 ## Script Usage
-To run a JSX script in After Effects...
+To run a JSX script within After Effects...
 
 `Open After Effects >>> File menu >>> Scripts >>> choose a script to execute`
 
