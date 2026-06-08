@@ -17,14 +17,14 @@ seedRandom(1, true);
 wiggle(freq, amp, octaves = 1, amp_mult = 0.5, time = time)
 ```
 
-## Wiggle the scale and affect both X and Y in tandem
+## Wiggle the scale and affect both X and Y in lockstep
 ```
 seedRandom(654, true);
 w = wiggle(0.5, 50)[0]; // Get the X component of the wiggle
 [w, w]; // Apply the same value to both X and Y
 ```
 
-## Wiggle position Y BUT NOT X
+## Wiggle position Y but not X
 ```
 seedRandom(1, true);
 x = value[0]; // Keep the original X position
@@ -32,7 +32,7 @@ y = wiggle(4, 100)[1]; // Apply wiggle only to Y
 [x, y]
 ```
 
-## Wiggle position X BUT NOT Y
+## Wiggle position X but not Y
 ```
 seedRandom(1, true);
 x = wiggle(4, 100)[0]; // Apply wiggle only to X
