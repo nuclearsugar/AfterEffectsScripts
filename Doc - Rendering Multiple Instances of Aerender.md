@@ -7,7 +7,7 @@ After Effects (AE) is a lightly threaded app when rendering, even with "Multi-Fr
 - **Possibility 3:** If you're rendering for more than 24 hours with multiple instances... Check out my [Isosceles_RenderQueueSplitIntoSeperateProjects.jsx](https://raw.githubusercontent.com/nuclearsugar/AfterEffectsScripts/refs/heads/main/Isosceles_RenderQueueSplitIntoSeperateProjects.jsx) script which takes all selected comps in the Project window, splits them into fixed-size batches (N per batch), adds each batch to the Render Queue, and saves a separate After Effects project file for each batch. This is useful because the AE render engine can gradually slow down during long uninterrupted renders. My theory is that heavy RAM pressure, especially when running multiple command-line render instances and consistently maxing out available memory, may lead to inefficient memory behavior over time. The hardware load balancer in the AE render engine is quite good but sometimes a bit shaky when running x4 instances concurrently. So by reloading the whole AE render engine every so often, it stays refreshed and maintains consistent performance and avoid slow downs.
 
 # Workflow
-This technique has been tested on Windows 11.
+This technique has been used extensively on Windows 11.
 
 ## Step 1) Tweak the AE Preferences
 - Open up AE >>> Edit menu >>> Preferences >>> Memory & CPU >>> Increase the "RAM reserved for other applications" to the highest possible value. This will leave 1 GB of RAM available for AE. These settings are also used by the Aerender executable. I like to take a screenshot of these settings so that I can set it back to normal after the renders have completed, otherwise your RAM previews will be very short.
