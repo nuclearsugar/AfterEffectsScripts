@@ -40,7 +40,7 @@ y = value[1]; // Keep the original Y position
 [x, y]
 ```
 
-## Opacity randomly turn on/off
+## Opacity randomly flicker (0% or 100%, with no values in between)
 ```
 seed = index; // or any fixed number for repeatable pattern
 seedRandom(seed + Math.floor(time * 10), true); // 10 = flickers per second
