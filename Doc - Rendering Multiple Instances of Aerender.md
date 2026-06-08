@@ -8,55 +8,81 @@ After Effects is a lightly threaded app when rendering, even with "Multi-Frame R
 
 # Workflow (on Windows 11)
 
-## 1) Tweak the After Effects Settings
+## Step 1) Tweak the After Effects Settings
 - Open up After Effects >>> Settings >>> Memory and Cache >>> Reduce to _________. These settings are also used by the Aerender executable.
 - Reasoning: RAM is useful in After Effects for previewing purposes. But when it comes to rendering, After Effects doesn’t actually require a huge amount of RAM and it can render without any issue when using the minimum settings. Even when rendering at 3840x2160 at 60fps.
 
-## 2) Prep the Render Queue
-- You will need to prepare one After Effects for each render instance you plan on running.
-- Open up your After Effects projects and add comps into the render queue. Set all of your render settings and file destinations as per usual.
-- For example: Suppose you have a After Effects project with 400 comps. Then AE Project 1 will have comps 1-100 in the render queue, AE Project 2 will have comps 101-200 in the render queue, AE Project 3 will have comps 201-300 in the render queue, and AE Project 4 will have comps 301-400 in the render queue,
+## Step 2) Prep the Render Queue
+- You will need to prepare one After Effects project for each render instance that you plan on running. For this tutorial, I will be assuming x4 instances.
+- Open up your each of your After Effects projects and add comps into the render queue. Set all of your render settings and file destinations as per usual in the built-in AE render queue.
+- For example: Suppose you have a After Effects project with 400 comps. Then <AE-Project-1.aep> will have comps 1-100 in the render queue, <AE-Project-2.aep> will have comps 101-200 in the render queue, <AE-Project-3.aep> will have comps 201-300 in the render queue, and <AE-Project-4.aep> will have comps 301-400 in the render queue,
 - When your done with this task, then you should close After Effects.
 
-## 3) Prep your BAT Files
-- Open up the [Notepad++](https://notepad-plus-plus.org/) app and create some new documents. The amount depends on how many Aerender instances you’ll be running. Save these file to your desktop and name it <Batch-Render-Instance1.bat>, <Batch-Render-Instance1.bat>, <Batch-Render-Instance1.bat>, and <Batch-Render-Instance1.bat>. Note that the <.bat> file extension is important since it allows you to quickly and easily get the command prompt booted up with the necessary settings pre filled out.
-- Paste in the code listed below into each of the <Batch-Render-Instance#.bat> files. You’ll need to edit the text so that it uses the version of After Effects that you have installed and also change it so that it points directly to you After Effects project.
+## Step 3) Prep your BAT Files
+- Open up the [Notepad++](https://notepad-plus-plus.org/) app and create some 4 new documents. Save these files to your desktop and name them <Batch-Render-Instance1.bat>, <Batch-Render-Instance1.bat>, <Batch-Render-Instance1.bat>, and <Batch-Render-Instance1.bat>.
+- Note that the <.bat> file extension is important here since it allows you to quickly and easily get the command prompt booted up with the necessary settings and will be all prefilled out.
+- Paste in the code listed below into each of the <Batch-Render-Instance#.bat> files. You’ll need to edit the text so that it uses the version of After Effects that you have installed and also change it so that it points directly to each of your After Effects projects.
 
 <Batch-Render-Instance1.bat>
 ```
 title Batch-Render-Instance1
 cd C:\Program Files\Adobe\Adobe After Effects 2026\Support Files
-aerender -project C:\Users\SuperDuper\Desktop\Noise_v026.aep
+aerender -project "C:\Users\SuperDuper\Desktop\Noise_v026.aep"
+echo All renders completed.
+pause
 ```
 
 <Batch-Render-Instance2.bat>
 ```
 title Batch-Render-Instance2
 cd C:\Program Files\Adobe\Adobe After Effects 2026\Support Files
-aerender -project C:\Users\SuperDuper\Desktop\Noise_v027.aep
+aerender -project "C:\Users\SuperDuper\Desktop\Noise_v027.aep"
+echo All renders completed.
+pause
 ```
 
 <Batch-Render-Instance3.bat>
 ```
 title Batch-Render-Instance3
 cd C:\Program Files\Adobe\Adobe After Effects 2026\Support Files
-aerender -project C:\Users\SuperDuper\Desktop\Noise_v028.aep
+aerender -project "C:\Users\SuperDuper\Desktop\Noise_v028.aep"
+echo All renders completed.
+pause
 ```
 
 <Batch-Render-Instance4.bat>
 ```
 title Batch-Render-Instance4
 cd C:\Program Files\Adobe\Adobe After Effects 2026\Support Files
-aerender -project C:\Users\SuperDuper\Desktop\Noise_v029.aep
+aerender -project "C:\Users\SuperDuper\Desktop\Noise_v029.aep"
+echo All renders completed.
+pause
 ```
 
-## 4) Ready to Render
-- When you’re ready to begin rendering, double check on each of the <.BAT> files.
+## Step 4) Ready to Render
+- When you’re ready to begin rendering, double-click on each of the <.BAT> files. A command prompt will open for each render instance and it will begin rendering automatically.
+- If the render files, you probably didn't fill out the details correctly during Step 3. Go back and check.
 - Open the the Task Manager and keep a close eye on your _______. If you see the page file __________ rise dramtically, then you'll likely see one of the Aerender engines crash, stop rendering, and you'll see an alert in the relevant command prompt.
 - In my experience, I can run x4 instances of Aerender and with my 32GB of RAM. Each instance uses about 5GB. Depending on the complexity of the scene that you’re rendering, you might need to lower down to x3 or x2 instances of Aerender if your CPU is pegged at 100% continuously. You may actually get faster renders by not saturating every thread. Assuming your cooling and airflow are adequate, running at full utilization isn't harmful to the CPU. However slightly underfeeding the threads can sometimes improve overall efficiency and reduce bottlenecks, resulting in shorter render times.
 - If you’re using an alternate encoding engine, such as [AfterCodecs](https://www.autokroma.com/AfterCodecs), then it’ll use an additional _____ GB of RAM for the AfterCodecs engine. And that’s on top of the 5GB that Aerender uses. I can only run x3 instances when rendering via AfterCodecs.
 
-## 5) Need to Stop Rendering Early?
+## Step 5) Need to Stop Rendering Early?
 - If you need to stop the renders, there isn't a way to pause the renders. First close the command prompt windows. Then you need to open up the Task Manager and force quit each the processes named _____________.
 - When you're ready to resume the renders, you'll need to open up the After Effects projects and manually remove the items from the render queue that have been completed.
 - For very heavy renders, I'd reccomend rendering using a PNG sequence or JPG sequence since you can resume rendering from where the last frame left off. Although I'd suggest always deleting the last frame since the file can be incomplete or corrupted if the render engine happened to be force quitted while in the process of writing the file.
+
+## Queue Up Different Projects
+- You can string together multiple After Effects projects to render back-to-back using a single instance. This is useful you have tons of different projects that need rendered out and you don't want to bothef with importing them all into a single project. Also any computer that can render After Effects can handle this setup since it's just a single instance rendering. For example:
+
+<Batch-Render-Instance1.bat>
+```
+title Batch-Render-Instance1
+cd C:\Program Files\Adobe\Adobe After Effects 2026\Support Files
+aerender -project "C:\Users\SuperDuper\Desktop\Noise_v094.aep"
+aerender -project "C:\Users\SuperDuper\Desktop\Noise_v095.aep"
+aerender -project "C:\Users\SuperDuper\Desktop\Noise_v096.aep"
+aerender -project "C:\Users\SuperDuper\Desktop\Noise_v097.aep"
+aerender -project "C:\Users\SuperDuper\Desktop\Noise_v098.aep"
+echo All renders completed.
+pause
+```
