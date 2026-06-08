@@ -9,7 +9,7 @@ After Effects (AE) is a lightly threaded app when rendering, even with "Multi-Fr
 # Workflow
 This technique has been tested on Windows 11.
 
-## Step 1) Tweak the After Effects Settings
+## Step 1) Tweak the AE Preferences
 - Open up AE >>> Edit menu >>> Preferences >>> Memory & CPU >>> Increase the "RAM reserved for other applications" to the highest possible value. This will leave 1 GB of RAM available for AE. These settings are also used by the Aerender executable. I like to take a screenshot of these settings so that I can set it back to normal after the renders have completed, otherwise your RAM previews will be very short.
   - Reasoning: RAM is useful in AE for previewing purposes. But when it comes to rendering, AE doesn’t actually require a huge amount of RAM and it can render without any issue when using the minimum settings. Even when rendering at 3840x2160 at 60fps.
 - Also in the Preferences window, enable "Multi-Frame Rendering". Set the "% CPU reserved for other applications" to 10%.
