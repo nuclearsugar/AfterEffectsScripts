@@ -1,11 +1,5 @@
 # Wiggle Expressions in After Effects
 
-## Optional Advanced Parameters of Wiggle
-```
-seedRandom(1, true);
-wiggle(freq, amp, octaves = 1, amp_mult = 0.5, time = time)
-```
-
 ## Use the wiggle command to randomize an attribute
 ```
 seedRandom(1, true);
@@ -16,6 +10,12 @@ wiggle(4,10)
 - Explanation: `wiggle(4,100)`
   - The 1st number defines the number of times the layer will wiggle per second. This case it moved 4 times in 1 second. The 2nd number 100 is to set the range of movement.
 - You can have both a wiggle expression applied and have keyframes laid down on a layer, and then AE will automatically sum the movements of both aspects into the visible animation. Really useful!
+
+## Optional Advanced Parameters of Wiggle
+```
+seedRandom(1, true);
+wiggle(freq, amp, octaves = 1, amp_mult = 0.5, time = time)
+```
 
 ## Wiggle the scale and affect both X and Y in tandem
 ```
