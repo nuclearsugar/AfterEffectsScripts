@@ -72,7 +72,7 @@ pause
 - When you're ready to resume the renders, you'll need to open up the After Effects projects and manually remove the items from the render queue that have been completed.
 - For very heavy renders, I'd reccomend rendering using a PNG sequence or JPG sequence since you can resume rendering from where the last frame left off. Although I'd suggest always deleting the last frame since the file can be incomplete or corrupted if the render engine happened to be force quitted while in the process of writing the file.
 
-## Queue Up Different Projects
+## Tip: Queue Up Different Projects
 - You can string together multiple After Effects projects to render back-to-back. This is useful you have tons of different projects that need rendered out and you don't want to bother with importing them all into a single project. Also any computer that can render After Effects can handle this setup since it's just a single instance. For example:
 
 <Batch-Render-Instance1.bat>
