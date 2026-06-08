@@ -67,7 +67,7 @@ pause
 
 ## Step 4) Ready to Render
 - When you’re ready to begin rendering, double-click on each of the <.bat> files. A command prompt window will open for each render instance and it will begin rendering automatically.
-  - If you instantly see an error in the command prompt window, then you probably didn't fill out the details correctly during Step 3.
+- If you instantly see an error in the command prompt window, then you probably didn't fill out the details correctly during Step 3.
 - If your RAM becomes too bloated then one of the AE render engines will crash and you'll see an alert in the relevant command prompt. If this happens then you should reduce the amount of instances you're running by one and try again.
 - In my experience, I can run x4 instances with my 32GB of RAM and each instance uses about 5 GB. Depending on the complexity of the AE project that you’re rendering, you might need to only run x3 or x2 instances if all CPU cores are continuously maxed out at 100%. Ironically you will likely get faster rendering by not fully saturating every CPU thread. Assuming your cooling and airflow are adequate, running at full utilization isn't harmful to the CPU, however slightly underfeeding the CPU threads can improve overall efficiency and reduce bottlenecks.
 - If you’re using an alternate encoding engine, such as [AfterCodecs](https://www.autokroma.com/AfterCodecs), then it’ll use an additional 1-2 GB of RAM for the AfterCodecs engine. And that’s on top of the 5-7 GB that the AE render engine uses. I can only run x3 instances when rendering via AfterCodecs.
