@@ -11,39 +11,45 @@ Workflow (on Windows 11)
 - If you’re using an alternate encoding engine, such as AfterCodecs, then it’ll use an additional _____ GB of RAM for the AfterCodecs engine. And that’s on top of the 5GB that Aerender uses.
 - You’ll want all of your footage to be on an SSD. Otherwise you’ll thrash your HHD and it’ll become a bottleneck for the render speeds. The easiest way to do this is to _________.
 
-## Prep the render queue
+## Prep the Render Queue
 - Open up your After Effects project and add comps into the render queue. Set all of your render settings and destinations as per usual. When completed, save and close After Effects.
 
-## Prep your BAT files
-- Open up the [Notepad++](https://notepad-plus-plus.org/) app and create some new documents. The amount depends on how many Aerender instances you’ll be running. Save these file to your desktop and name it <Batch-Render-Instance1.bat>, <Batch-Render-Instance1.bat>, <Batch-Render-Instance1.bat>, and <Batch-Render-Instance1.bat>. Note that the <.bat> file extension is important.
+## Prep your BAT Files
+- Open up the [Notepad++](https://notepad-plus-plus.org/) app and create some new documents. The amount depends on how many Aerender instances you’ll be running. Save these file to your desktop and name it <Batch-Render-Instance1.bat>, <Batch-Render-Instance1.bat>, <Batch-Render-Instance1.bat>, and <Batch-Render-Instance1.bat>. Note that the <.bat> file extension is important since it allows you to quickly and easily get the command prompt booted up with the necessary settings pre filled out.
 - Paste in the code listed below into each of the <Batch-Render-Instance#.bat> files. You’ll need to edit the text so that it uses the version of After Effects that you have installed and also change it so that it points directly to you After Effects project.
 
 <Batch-Render-Instance1.bat>
+```
+title Batch-Render-Instance1
 cd C:\Program Files\Adobe\Adobe After Effects 2026\Support Files
 aerender -project C:\Users\SuperDuper\Desktop\Noise_v026.aep
+```
 
 <Batch-Render-Instance2.bat>
+```
+title Batch-Render-Instance2
 cd C:\Program Files\Adobe\Adobe After Effects 2026\Support Files
 aerender -project C:\Users\SuperDuper\Desktop\Noise_v027.aep
+```
 
 <Batch-Render-Instance3.bat>
+```
+title Batch-Render-Instance3
 cd C:\Program Files\Adobe\Adobe After Effects 2026\Support Files
 aerender -project C:\Users\SuperDuper\Desktop\Noise_v028.aep
+```
 
 <Batch-Render-Instance4.bat>
+```
+title Batch-Render-Instance4
 cd C:\Program Files\Adobe\Adobe After Effects 2026\Support Files
 aerender -project C:\Users\SuperDuper\Desktop\Noise_v029.aep
+```
 
-## Render
+## Ready to Render
 - When you’re ready to begin rendering, double check on each of the <.BAT> files. 
 
 ## When is this technique necessary?
-- If you have tons of comps that you need to render out and you have a powerful computer that can handle rendering multiple instances at the same time.
-- If you’re rendering somewhere over 600+ comps, then you’ll run into a bug with After Effects 2026 and prior versions. If you try to add too many comps into the render queue, then the GUI with overflow and glitch out. This is because the current UI framework only supports a panel being 30,000 pixels wide or long. I've reported this [bug](https://community.adobe.com/bug-reports-528/too-many-comps-will-glitch-gui-1554202) to Adobe.
+- If you have tons of comps that you need to render out and you have a powerful computer that can handle rendering multiple instances of Aerender at the same time. You'll need a top tier CPU and at least 32GB of RAM.
+- If you’re rendering somewhere over 600+ comps, then you’ll run into a knwon bug with After Effects 2026 and prior versions. If you try to add too many comps into the render queue, then the GUI with overflow and glitch out. This is because the current UI framework only supports a panel being 30,000 pixels wide or long. I've reported this [bug](https://community.adobe.com/bug-reports-528/too-many-comps-will-glitch-gui-1554202) to Adobe.
 - Check out my [Isosceles_RenderQueueSplitIntoSeperateProjects.jsx](https://raw.githubusercontent.com/nuclearsugar/AfterEffectsScripts/refs/heads/main/Isosceles_RenderQueueSplitIntoSeperateProjects.jsx) script which takes all selected comps in the Project panel, splits them into batches of 10, adds each batch to the Render Queue, and saves a separate After Effects project file for each batch. This is useful because the After Effects render engine can slow down after rendering continuously for a long time. My theory is that the RAM is getting fragmented due to the fact that I'm frequently maxing out the available RAM. This happens especially since I'm often running multiple instances of the command line rendering via aerender. The hardware load balancer in After Effects is quite good, but sometimes a bit shaky when running x4 instances of aerender concurrently. So by reloading the whole After Effects render engine, it stays refreshed and renders without slow downs. 
-
-
-
-
-
-
