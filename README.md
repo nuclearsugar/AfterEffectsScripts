@@ -1,17 +1,19 @@
 # After Effects Scripts by ISOSCELES
 Here's my personal collection of JSX scripts for After Effects. These scripts were created to automate repetitive production tasks since I often work with hundreds of comps in [my projects](https://www.jasonfletcher.info/vjloops/). The aim is to reduce the amount of manual effort required so that I can instead focus my energies on creative experiments. These scripts save me a ton of time.
 
-## Installation
+Also included are articles sharing my experience with [Rendering Multiple Instances of Aerender](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20Rendering%20Multiple%20Instances%20of%20Aerender.md) and [Wiggle Expressions](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20Wiggle%20Expressions%20in%20After%20Effects.md).
+
+## Script Installation
 After downloading a JSX script, move it to the following location:
 - Windows: `Program Files\Adobe\Adobe After Effects <version>\Support Files\Scripts`
 - MasOS: `Applications\Adobe After Effects <version>\Scripts`
 
-## Usage
+## Script Usage
 To run a JSX script within After Effects...
 
 `Open After Effects >>> File menu >>> Scripts >>> choose a script to execute`
 
-## Summary of Scripts
+## Script Summary
 - [Isosceles_ChangeAlphaToIgnore.jsx](https://raw.githubusercontent.com/nuclearsugar/AfterEffectsScripts/refs/heads/main/Isosceles_ChangeAlphaToIgnore.jsx) - This script will set “Alpha: Ignore” (within the Interpret Footage window) for all the selected footage items in the Project window.
 - [Isosceles_ChangeAlphaToPremultiplied.jsx](https://raw.githubusercontent.com/nuclearsugar/AfterEffectsScripts/refs/heads/main/Isosceles_ChangeAlphaToPremultiplied.jsx) - This script will set “Alpha: Premultiplied” (within the Interpret Footage window) for all the selected footage items in the Project window.
 - [Isosceles_ChangeAlphaToStraight.jsx](https://raw.githubusercontent.com/nuclearsugar/AfterEffectsScripts/refs/heads/main/Isosceles_ChangeAlphaToStraight.jsx) - This script will set “Alpha: Straight” (within the Interpret Footage window) for all the selected footage items in the Project window.
