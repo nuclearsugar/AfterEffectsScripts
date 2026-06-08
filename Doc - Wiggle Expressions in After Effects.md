@@ -40,6 +40,13 @@ y = value[1]; // Keep the original Y position
 [x, y]
 ```
 
+## Opacity randomly turn on/off
+```
+seed = index; // or any fixed number for repeatable pattern
+seedRandom(seed + Math.floor(time * 10), true); // 10 = flickers per second
+random(0, 1) > 0.5 ? 100 : 0;
+```
+
 ## Triggering an opacity pulse from a marker on another layer
 ```
 m = thisComp.layer("ExampleLayerName").marker;
@@ -53,12 +60,3 @@ if (n > 0)
 else
   0
 ```
-
-## Opacity randomly turn on/off
-```
-seed = index; // or any fixed number for repeatable pattern
-seedRandom(seed + Math.floor(time * 10), true); // 10 = flickers per second
-random(0, 1) > 0.5 ? 100 : 0;
-```
-
-
