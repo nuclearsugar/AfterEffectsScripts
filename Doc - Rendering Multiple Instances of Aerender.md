@@ -4,7 +4,7 @@ After Effects is a lightly threaded app when rendering, even with Multi-Frame Re
 
 Workflow (on Windows 11)
 
-## Adjust After Effects Settings
+## Tweak the After Effects Settings
 - Open up After Effects >>> Settings >>> Memory and Cache >>> Reduce to _________. These settings are also used by the Aerender executable.
 - Reasoning: RAM is useful in After Effects for previewing purposes. But when it comes to rendering, After Effects doesn’t actually require a huge amount of RAM and it can render without any issue when using the minimum settings. Even when rendering at 3840x2160 at 60fps.
 - In my experience, I can run x4 instances of Aerender and with my 32GB of RAM. Each instance uses about 5GB. Depending on the complexity of the scene that you’re rendering, you might need to lower down to x3 or x2 instances of Aerender if your CPU is pegged at 100% continuously. You may actually get faster renders by not saturating every thread. Assuming your cooling and airflow are adequate, running at full utilization isn't harmful to the CPU. However slightly underfeeding the threads can sometimes improve overall efficiency and reduce bottlenecks, resulting in shorter render times.
