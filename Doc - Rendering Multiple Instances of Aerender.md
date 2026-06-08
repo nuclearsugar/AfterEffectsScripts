@@ -11,18 +11,18 @@ This technique has been tested on Windows 11.
 
 ## Step 1) Tweak the AE Preferences
 - Open up AE >>> Edit menu >>> Preferences >>> Memory & CPU >>> Increase the "RAM reserved for other applications" to the highest possible value. This will leave 1 GB of RAM available for AE. These settings are also used by the Aerender executable. I like to take a screenshot of these settings so that I can set it back to normal after the renders have completed, otherwise your RAM previews will be very short.
-  - Reasoning: RAM is useful in AE for previewing purposes. But when it comes to rendering, AE doesn’t actually require a huge amount of RAM and it can render without any issue when using the minimum settings. Even when rendering at 3840x2160 at 60fps.
+- Reasoning: RAM is useful in AE for previewing purposes. But when it comes to rendering, AE doesn’t actually require a huge amount of RAM and it can render without any issue when using the minimum settings. Even when rendering at 3840x2160 at 60fps.
 - Also in the Preferences window, enable "Multi-Frame Rendering". Set the "% CPU reserved for other applications" to 10%.
 
 ## Step 2) Prep the Render Queue for each AE Project
 - You will need to prepare one AE project for each render instance that you plan on running. For this tutorial I will be running x4 instances.
 - Open up each of your AE projects and add comps into the render queue. It could be the exact same AE project and just duplicated four times. Set all of your render settings and file destinations as per usual in the built-in AE render queue.
-  - For example: Suppose you have an AE project with 400 comps. Then <AE-Project-1.aep> will have comps 1-100 in the render queue, <AE-Project-2.aep> will have comps 101-200 in the render queue, <AE-Project-3.aep> will have comps 201-300 in the render queue, and <AE-Project-4.aep> will have comps 301-400 in the render queue,
+- For example: Suppose you have an AE project with 400 comps. Then <AE-Project-1.aep> will have comps 1-100 in the render queue, <AE-Project-2.aep> will have comps 101-200 in the render queue, <AE-Project-3.aep> will have comps 201-300 in the render queue, and <AE-Project-4.aep> will have comps 301-400 in the render queue,
 - When you're done with this task, then you should close AE.
 
 ## Step 3) Prep your BAT Files
 - Open up the [Notepad++](https://notepad-plus-plus.org/) app (or any text editor) and create 4 new documents. Save these files to your desktop and name them <Batch-Render-Instance1.bat>, <Batch-Render-Instance2.bat>, <Batch-Render-Instance3.bat>, and <Batch-Render-Instance4.bat>.
-  - Note that the <.bat> file extension is important here since it allows you to quickly get the command prompt window started up with the necessary settings.
+- Note that the <.bat> file extension is important here since it allows you to quickly get the command prompt window started up with the necessary settings.
 - Paste in the code listed below into each of the <Batch-Render-Instance#.bat> files. You’ll need to edit the text so that it uses the version of AE that you have installed and also change it so that it points directly to each one of your AE projects.
 
 <Batch-Render-Instance1.bat>
@@ -75,7 +75,7 @@ pause
 
 ## Need to Stop Rendering Early?
 - If you need to stop rendering prematurely, first close the command prompt windows. Then open up the Task Manager >>> Processes tab >>> and force quit each process named "Adobe After Effects 2026".
-  - Beware: the typical CTRL+C hotkey which stops a process running in a command prompt window, actually does not end the "Adobe After Effects 2026" process. The process must be stopped manually.
+- Beware: the typical CTRL+C hotkey which stops a process running in a command prompt window, actually does not end the "Adobe After Effects 2026" process. The process must be stopped manually.
 - If you need to resume the renders, you'll need to open up the AE projects and manually remove the items from the render queue that have been completed. It's not ideal, but that's just a caveat of this technique.
 - For very heavy renders or long duration comps, I'd recommend rendering using a PNG sequence or JPG sequence since you can resume rendering from where the last frame left off. Although when resuming a render, always delete the last frame since the file could be incomplete or corrupted if the AE render engine happened to be force quitted while in the process of writing the file.
 
