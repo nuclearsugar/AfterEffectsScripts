@@ -7,9 +7,9 @@ wiggle(freq, amp, octaves = 1, amp_mult = 0.5, time = time)
 ```
 
 ## Use the wiggle command to randomize an attribute
-- Explanation: seedRandom(1, true)
+- Explanation: `seedRandom(1, true)`
   - 1 is the seed. Set to the same seed to have different layers follow the same seed. Or set to a different seed to have each layer follow its own seed.
-- Explanation: wiggle(4,100)
+- Explanation: `wiggle(4,100)`
   - The 1st number defines the number of times the layer will wiggle per second. This case it moved 4 times in 1 second. The 2nd number 100 is to set the range of movement.
 - You can have both a wiggle expression and have keyframes laid down, and then AE will automatically sum the movements of both aspects into the visible animation. Really useful!
 
