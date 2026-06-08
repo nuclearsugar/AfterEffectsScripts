@@ -10,7 +10,7 @@ After Effects is a lightly threaded app when rendering, even with "Multi-Frame R
 This technique has been tested on Windows 11.
 
 ## Step 1) Tweak the After Effects Settings
-- Open up After Effects >>> Settings >>> Memory and Cache >>> Reduce to _________. These settings are also used by the Aerender executable.
+- Open up After Effects >>> Settings >>> Memory and Cache >>> Reduce to _________. These settings are also used by the Aerender executable. I like to take a screenshot of these settings so that I can set it back to normal after the renders have completed, otherwise your RAM previewing ability will be very short.
 - Reasoning: RAM is useful in After Effects for previewing purposes. But when it comes to rendering, After Effects doesn’t actually require a huge amount of RAM and it can render without any issue when using the minimum settings. Even when rendering at 3840x2160 at 60fps.
 
 ## Step 2) Prep the Render Queue
