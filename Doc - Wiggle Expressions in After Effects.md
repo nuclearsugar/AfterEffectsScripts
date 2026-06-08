@@ -1,6 +1,6 @@
 # Wiggle Expressions in After Effects
 
-## Wiggle: Optional Advanced Parameters
+## Optional Advanced Parameters of Wiggle
 ```
 seedRandom(1, true);
 wiggle(freq, amp, octaves = 1, amp_mult = 0.5, time = time)
