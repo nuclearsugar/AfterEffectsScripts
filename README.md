@@ -39,4 +39,4 @@ To run a JSX script within After Effects...
 ## Credits
 These scripts were vibecoded using the various model versions of ChatGPT (free version). Each script was created for a specific issue I was facing at the time and so these scripts have actually been used in production (using After Effects 2026). That said, some of these scripts have a specific use-case and may not behave as expected in different scenarios. Use these scripts at your own risk. If a script isn't working correctly for your needs then I'd recommend pasting it into ChatGPT and telling it what you need tweaked or the error you're seeing.
 
-I'm unable to provide support or guarantee compatibility with future After Effects versions. Please feel free to fork and modify these scripts to suit your needs. Shared using the GPL-3.0 license. Cheers!
+I'm unable to provide support or guarantee compatibility with future versions of After Effects. Please feel free to fork and modify these scripts to suit your needs. Shared using the GPL-3.0 license. Cheers!
