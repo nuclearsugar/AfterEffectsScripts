@@ -68,9 +68,9 @@ pause
 - If you’re using an alternate encoding engine, such as [AfterCodecs](https://www.autokroma.com/AfterCodecs), then it’ll use an additional _____ GB of RAM for the AfterCodecs engine. And that’s on top of the 5GB that Aerender uses. I can only run x3 instances when rendering via AfterCodecs.
 
 ## Step 5) Need to Stop Rendering Early?
-- If you need to stop the renders, there isn't a way to pause the renders. First close the command prompt windows. Then you need to open up the Task Manager and force quit each the processes named _____________.
-- When you're ready to resume the renders, you'll need to open up the After Effects projects and manually remove the items from the render queue that have been completed.
-- For very heavy renders, I'd reccomend rendering using a PNG sequence or JPG sequence since you can resume rendering from where the last frame left off. Although I'd suggest always deleting the last frame since the file can be incomplete or corrupted if the render engine happened to be force quitted while in the process of writing the file.
+- If you need to stop the renders, first close the command prompt windows. Then open up the Task Manager and force quit each the processes named _____________.
+- If you need to resume the renders, you'll need to open up the After Effects projects and manually remove the items from the render queue that have been completed.
+- For very heavy renders or long duration comps, I'd reccomend rendering using a PNG sequence or JPG sequence since you can resume rendering from where the last frame left off. Although I'd suggest always deleting the last frame since the file can be incomplete or corrupted if the render engine happened to be force quitted while in the process of writing the file.
 
 ## Tip: Queue Up Different Projects
 - You can string together multiple After Effects projects to render back-to-back. This is useful you have tons of different projects that need rendered out and you don't want to bother with importing them all into a single project. Also any computer that can render After Effects can handle this setup since it's just a single instance. For example:
