@@ -1,5 +1,5 @@
 # After Effects Scripts by ISOSCELES
-Here's my collection of JSX scripts for After Effects. These scripts were created to automate repetitive production tasks since I often work with hundreds of comps in [my projects](https://www.jasonfletcher.info/vjloops/). The aim is to reduce the amount of manual effort required so that I can instead focus my energies on creative experiments. These scripts save me a ton of time.
+Here's my personal collection of JSX scripts for After Effects. These scripts were created to automate repetitive production tasks since I often work with hundreds of comps in [my projects](https://www.jasonfletcher.info/vjloops/). The aim is to reduce the amount of manual effort required so that I can instead focus my energies on creative experiments. These scripts save me a ton of time.
 
 ## Installation
 After downloading a JSX script, move it to the following location:
