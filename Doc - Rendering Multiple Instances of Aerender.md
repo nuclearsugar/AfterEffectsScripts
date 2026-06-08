@@ -6,7 +6,8 @@ After Effects is a lightly threaded app when rendering, even with "Multi-Frame R
 - If you’re rendering somewhere over 600+ comps, then you’ll run into a knwon bug with After Effects 2026 and prior versions. If you try to add too many comps into the render queue, then the GUI with overflow and glitch out. This is because the current UI framework only supports a panel being 30,000 pixels wide or long. I've reported this [bug](https://community.adobe.com/bug-reports-528/too-many-comps-will-glitch-gui-1554202) to Adobe.
 - Related note: Check out my [Isosceles_RenderQueueSplitIntoSeperateProjects.jsx](https://raw.githubusercontent.com/nuclearsugar/AfterEffectsScripts/refs/heads/main/Isosceles_RenderQueueSplitIntoSeperateProjects.jsx) script which takes all selected comps in the Project panel, splits them into batches of 10, adds each batch to the Render Queue, and saves a separate After Effects project file for each batch. This is useful because the After Effects render engine can slow down after rendering continuously for a long time. My theory is that the RAM is getting fragmented due to the fact that I'm frequently maxing out the available RAM. This happens especially since I'm often running multiple instances of the command line rendering via aerender. The hardware load balancer in After Effects is quite good, but sometimes a bit shaky when running x4 instances of aerender concurrently. So by reloading the whole After Effects render engine, it stays refreshed and renders without slow downs. 
 
-# Workflow (on Windows 11)
+# Workflow
+This technique has been tested on Windows 11.
 
 ## Step 1) Tweak the After Effects Settings
 - Open up After Effects >>> Settings >>> Memory and Cache >>> Reduce to _________. These settings are also used by the Aerender executable.
@@ -72,7 +73,7 @@ pause
 - For very heavy renders, I'd reccomend rendering using a PNG sequence or JPG sequence since you can resume rendering from where the last frame left off. Although I'd suggest always deleting the last frame since the file can be incomplete or corrupted if the render engine happened to be force quitted while in the process of writing the file.
 
 ## Queue Up Different Projects
-- You can string together multiple After Effects projects to render back-to-back using a single instance. This is useful you have tons of different projects that need rendered out and you don't want to bothef with importing them all into a single project. Also any computer that can render After Effects can handle this setup since it's just a single instance rendering. For example:
+- You can string together multiple After Effects projects to render back-to-back. This is useful you have tons of different projects that need rendered out and you don't want to bother with importing them all into a single project. Also any computer that can render After Effects can handle this setup since it's just a single instance. For example:
 
 <Batch-Render-Instance1.bat>
 ```
