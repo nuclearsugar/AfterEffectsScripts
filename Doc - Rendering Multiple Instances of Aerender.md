@@ -13,7 +13,10 @@ After Effects is a lightly threaded app when rendering, even with Multi-Frame Re
 - Reasoning: RAM is useful in After Effects for previewing purposes. But when it comes to rendering, After Effects doesn’t actually require a huge amount of RAM and it can render without any issue when using the minimum settings. Even when rendering at 3840x2160 at 60fps.
 
 ## 2) Prep the Render Queue
-- Open up your After Effects project and add comps into the render queue. Set all of your render settings and file destinations as per usual. When completed then save and close After Effects.
+- You will need to prepare one After Effects for each render instance you plan on running.
+- Open up your After Effects projects and add comps into the render queue. Set all of your render settings and file destinations as per usual.
+- For example: Suppose you have a After Effects project with 400 comps. Then AE Project 1 will have comps 1-100 in the render queue, AE Project 2 will have comps 101-200 in the render queue, AE Project 3 will have comps 201-300 in the render queue, and AE Project 4 will have comps 301-400 in the render queue,
+- When your done with this task, then you should close After Effects.
 
 ## 3) Prep your BAT Files
 - Open up the [Notepad++](https://notepad-plus-plus.org/) app and create some new documents. The amount depends on how many Aerender instances you’ll be running. Save these file to your desktop and name it <Batch-Render-Instance1.bat>, <Batch-Render-Instance1.bat>, <Batch-Render-Instance1.bat>, and <Batch-Render-Instance1.bat>. Note that the <.bat> file extension is important since it allows you to quickly and easily get the command prompt booted up with the necessary settings pre filled out.
@@ -51,7 +54,7 @@ aerender -project C:\Users\SuperDuper\Desktop\Noise_v029.aep
 - When you’re ready to begin rendering, double check on each of the <.BAT> files.
 - Open the the Task Manager and keep a close eye on your _______. If you see the page file __________ rise dramtically, then you'll likely see one of the Aerender engines crash, stop rendering, and you'll see an alert in the relevant command prompt.
 - In my experience, I can run x4 instances of Aerender and with my 32GB of RAM. Each instance uses about 5GB. Depending on the complexity of the scene that you’re rendering, you might need to lower down to x3 or x2 instances of Aerender if your CPU is pegged at 100% continuously. You may actually get faster renders by not saturating every thread. Assuming your cooling and airflow are adequate, running at full utilization isn't harmful to the CPU. However slightly underfeeding the threads can sometimes improve overall efficiency and reduce bottlenecks, resulting in shorter render times.
-- If you’re using an alternate encoding engine, such as AfterCodecs, then it’ll use an additional _____ GB of RAM for the AfterCodecs engine. And that’s on top of the 5GB that Aerender uses.
+- If you’re using an alternate encoding engine, such as [AfterCodecs](https://www.autokroma.com/AfterCodecs), then it’ll use an additional _____ GB of RAM for the AfterCodecs engine. And that’s on top of the 5GB that Aerender uses. I can only run x3 instances when rendering via AfterCodecs.
 
 ## 5) Need to Stop Rendering Early?
 - If you need to stop the renders, there isn't a way to pause the renders. First close the command prompt windows. Then you need to open up the Task Manager and force quit each the processes named _____________.
