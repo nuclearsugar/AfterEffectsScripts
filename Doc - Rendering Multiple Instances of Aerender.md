@@ -15,7 +15,7 @@ This technique has been used extensively on Windows 11.
 - Also in the Preferences window, enable "Multi-Frame Rendering". Set the "% CPU reserved for other applications" to 10%. The hardware load balance within the AE render engine will automatically share the CPU threads between the multiple instances, but you have to give it a ceiling to work with.
 
 ## Step 2) Prep the Render Queue for each AE Project
-- You will need to prepare one AE project for each render instance that you plan on running. For this tutorial I will be running x4 instances.
+- You need to prepare one AE project for each render instance that you plan on running. For this tutorial I will be running x4 instances.
 - Open up each of your AE projects and add comps into the render queue. It could be the exact same AE project and just duplicated four times. Set all of your render settings and file destinations as per usual in the built-in AE render queue.
 - For example: Suppose you have an AE project with 400 comps. Then <AE-Project-1.aep> will have comps 1-100 in the render queue, <AE-Project-2.aep> will have comps 101-200 in the render queue, <AE-Project-3.aep> will have comps 201-300 in the render queue, and <AE-Project-4.aep> will have comps 301-400 in the render queue,
 - When you're done with this task, then you should close AE.
