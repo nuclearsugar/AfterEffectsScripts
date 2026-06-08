@@ -80,7 +80,9 @@ pause
 - For very heavy renders or long duration comps, I'd recommend rendering using a PNG sequence or JPG sequence since you can resume rendering from where the last frame left off. Although when resuming a render, always delete the last frame since the file could be incomplete or corrupted if the AE render engine happened to be force quitted while in the process of writing the file.
 
 ## Tip: Queue Up Multiple AE Projects
-- You can string together multiple AE projects so that they render back-to-back. This is effectively a queue of AE projects, with each AE project containing its own render queue. A queue of queues... blasphemy! This is useful if you have tons of different AE projects that need to be rendered out. It's also useful if you have thousands of comps within a single AE project. And any computer that can render AE can handle this setup since it's just a single instance. For example:
+- You can string together multiple AE projects so that they render back-to-back. This is effectively a queue of AE projects, with each AE project containing its own render queue. A queue of queues... blasphemy!
+- This is useful if you have tons of different AE projects that need to be rendered out. It's also useful if you have thousands of comps within a single AE project.
+- Any computer that can render AE can handle this setup since it's just a single instance. For example:
 
 <Batch-Render-Instance1.bat>
 ```
