@@ -1,20 +1,17 @@
-
-
+# Rendering Multiple Instances of Aerender
 After Effects is a lightly threaded app when rendering, even with Multi-Frame Rendering enabled. So if you have a good amount of RAM, then you can spin up multiple After Effects render engines at the same time. This is possible through the use of the [Aerender](https://helpx.adobe.com/after-effects/using/automated-rendering-network-rendering.html) executable, which has no GUI and can only be interacted with via a command line prompt.
 
-Workflow (on Windows 11)
+## Workflow (on Windows 11)
 
-## Tweak the After Effects Settings
+## 1) Tweak the After Effects Settings
 - Open up After Effects >>> Settings >>> Memory and Cache >>> Reduce to _________. These settings are also used by the Aerender executable.
 - Reasoning: RAM is useful in After Effects for previewing purposes. But when it comes to rendering, After Effects doesn’t actually require a huge amount of RAM and it can render without any issue when using the minimum settings. Even when rendering at 3840x2160 at 60fps.
-- In my experience, I can run x4 instances of Aerender and with my 32GB of RAM. Each instance uses about 5GB. Depending on the complexity of the scene that you’re rendering, you might need to lower down to x3 or x2 instances of Aerender if your CPU is pegged at 100% continuously. You may actually get faster renders by not saturating every thread. Assuming your cooling and airflow are adequate, running at full utilization isn't harmful to the CPU. However slightly underfeeding the threads can sometimes improve overall efficiency and reduce bottlenecks, resulting in shorter render times.
-- If you’re using an alternate encoding engine, such as AfterCodecs, then it’ll use an additional _____ GB of RAM for the AfterCodecs engine. And that’s on top of the 5GB that Aerender uses.
+
+## 2) Prep the Render Queue
+- Open up your After Effects project and add comps into the render queue. Set all of your render settings and destinations as per usual. When completed, save and close After Effects.
 - You’ll want all of your footage to be on an SSD. Otherwise you’ll thrash your HHD and it’ll become a bottleneck for the render speeds. The easiest way to do this is to _________.
 
-## Prep the Render Queue
-- Open up your After Effects project and add comps into the render queue. Set all of your render settings and destinations as per usual. When completed, save and close After Effects.
-
-## Prep your BAT Files
+## 3) Prep your BAT Files
 - Open up the [Notepad++](https://notepad-plus-plus.org/) app and create some new documents. The amount depends on how many Aerender instances you’ll be running. Save these file to your desktop and name it <Batch-Render-Instance1.bat>, <Batch-Render-Instance1.bat>, <Batch-Render-Instance1.bat>, and <Batch-Render-Instance1.bat>. Note that the <.bat> file extension is important since it allows you to quickly and easily get the command prompt booted up with the necessary settings pre filled out.
 - Paste in the code listed below into each of the <Batch-Render-Instance#.bat> files. You’ll need to edit the text so that it uses the version of After Effects that you have installed and also change it so that it points directly to you After Effects project.
 
@@ -46,8 +43,11 @@ cd C:\Program Files\Adobe\Adobe After Effects 2026\Support Files
 aerender -project C:\Users\SuperDuper\Desktop\Noise_v029.aep
 ```
 
-## Ready to Render
-- When you’re ready to begin rendering, double check on each of the <.BAT> files. 
+## 4) Ready to Render
+- When you’re ready to begin rendering, double check on each of the <.BAT> files.
+- Open the the Task Manager and keep a close eye on your _______. If you see the page file __________
+- - In my experience, I can run x4 instances of Aerender and with my 32GB of RAM. Each instance uses about 5GB. Depending on the complexity of the scene that you’re rendering, you might need to lower down to x3 or x2 instances of Aerender if your CPU is pegged at 100% continuously. You may actually get faster renders by not saturating every thread. Assuming your cooling and airflow are adequate, running at full utilization isn't harmful to the CPU. However slightly underfeeding the threads can sometimes improve overall efficiency and reduce bottlenecks, resulting in shorter render times.
+- If you’re using an alternate encoding engine, such as AfterCodecs, then it’ll use an additional _____ GB of RAM for the AfterCodecs engine. And that’s on top of the 5GB that Aerender uses.
 
 ## When is this technique necessary?
 - If you have tons of comps that you need to render out and you have a powerful computer that can handle rendering multiple instances of Aerender at the same time. You'll need a top tier CPU and at least 32GB of RAM.
