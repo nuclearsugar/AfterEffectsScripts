@@ -43,7 +43,10 @@
         }
     }
 
-    alert("Moved Work Area Start to frame " + targetFrame + " for " + movedCount + " composition(s).");
+    alert(
+        "Comps processed: " + movedCount + "\n" +
+        "Work Area Start set to frame: " + targetFrame
+    );
 
     app.endUndoGroup();
 })();

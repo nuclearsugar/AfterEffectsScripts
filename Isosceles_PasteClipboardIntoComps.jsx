@@ -9,6 +9,7 @@
     app.beginUndoGroup("Paste Clipboard Into Selected Comps");
 
     var proj = app.project;
+    var affectedCount = 0;
 
     if (!proj) {
         alert("No project open.");
@@ -30,10 +31,17 @@
 
                     // Paste clipboard contents into this comp
                     app.executeCommand(20); // Edit > Paste
+
+                    affectedCount++;
                 }
             }
         }
     }
+
+    // Final summary alert
+    alert(
+        "Clipboard pasted into " + affectedCount + " comps"
+    );
 
     app.endUndoGroup();
 }

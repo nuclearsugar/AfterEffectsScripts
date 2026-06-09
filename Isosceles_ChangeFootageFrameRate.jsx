@@ -39,10 +39,17 @@
                     }
                 }
 
-                alert("Frame rate set to " + fps + " fps for " + count + " footage item(s).");
-            }
+                var totalSelected = selectedItems.length;
+                var skipped = totalSelected - count;
 
-            app.endUndoGroup();
+                app.endUndoGroup();
+
+                alert(
+                    "Set frame rate to: " + fps + " fps\n" +
+                    "Affected footage items: " + count + "\n" +
+                    "Skipped footage items: " + skipped
+                );
+            }
         }
     }
 }

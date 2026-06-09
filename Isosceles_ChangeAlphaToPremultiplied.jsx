@@ -6,18 +6,29 @@
 {
     var proj = app.project;
     var selectedItems = proj.selection;
+    var changedCount = 0;
 
     app.beginUndoGroup("Set Alpha to Premultiplied");
 
     for (var i = 0; i < selectedItems.length; i++) {
         var item = selectedItems[i];
+
         if (item instanceof FootageItem) {
             var interp = item.mainSource;
+
             if (interp instanceof FileSource) {
                 interp.alphaMode = AlphaMode.PREMULTIPLIED;
+                changedCount++;
             }
         }
     }
 
     app.endUndoGroup();
+
+    alert(
+        "Set 'Alpha: Premultiplied' for " +
+        changedCount +
+        " selected footage item" +
+        (changedCount === 1 ? "" : "s")
+    );
 }

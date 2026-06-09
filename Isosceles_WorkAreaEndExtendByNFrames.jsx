@@ -21,6 +21,8 @@
         return;
     }
 
+    var processedComps = 0;
+
     app.beginUndoGroup("Extend Comp Duration by " + framesToAdd + " Frames");
 
     for (var i = 0; i < selectedItems.length; i++) {
@@ -31,8 +33,15 @@
             var frameRate = item.frameRate;
             var addedTime = framesToAdd / frameRate;
             item.duration = originalDuration + addedTime;
+
+            processedComps++;
         }
     }
 
     app.endUndoGroup();
+
+    alert(
+        "Comps processed: " + processedComps + "\n" +
+        "Frames extended per comp: " + framesToAdd
+    );
 })();

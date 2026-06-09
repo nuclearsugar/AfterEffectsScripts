@@ -56,7 +56,6 @@
     }
 
     alert(
-        "Finished.\n\n" +
         "Comps processed: " + compCount + "\n" +
         "Layers processed: " + layerCount + "\n" +
         "Effects disabled: " + effectCount

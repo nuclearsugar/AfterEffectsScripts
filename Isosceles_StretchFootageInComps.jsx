@@ -24,11 +24,15 @@
         stretchValue = 50;
     }
 
+    var compsProcessed = 0;
+    var layersAffected = 0;
+
     for (var i = 0; i < selectedItems.length; i++) {
         var item = selectedItems[i];
 
         // Only process compositions
         if (item instanceof CompItem) {
+            compsProcessed++;
             var comp = item;
 
             for (var j = 1; j <= comp.numLayers; j++) {
@@ -37,10 +41,17 @@
                 // Check if layer is a footage layer
                 if (layer.source && layer.source instanceof FootageItem) {
                     layer.stretch = stretchValue;
+                    layersAffected++;
                 }
             }
         }
     }
 
     app.endUndoGroup();
+
+    alert(
+        "Compositions processed: " + compsProcessed + "\n" +
+        "Footage layers modified: " + layersAffected + "\n" +
+        "Stretch value applied: " + stretchValue + "%"
+    );
 })();

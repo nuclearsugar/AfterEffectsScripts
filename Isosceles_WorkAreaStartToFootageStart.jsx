@@ -88,14 +88,10 @@
         );
     }
 
+    // ALERT (updated format)
     var msg = "";
-    if (updated.length) {
-        msg += "Updated:\n" + updated.join("\n") + "\n\n";
-    }
-    if (skipped.length) {
-        msg += "Skipped:\n" + skipped.join("\n");
-    }
-
+    if (updated.length) msg += "Comps Updated:\n" + updated.join("\n") + "\n\n";
+    if (skipped.length) msg += "Comps Skipped:\n" + skipped.join("\n");
     alert(msg);
 
     app.endUndoGroup();

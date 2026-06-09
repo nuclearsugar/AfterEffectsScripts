@@ -8,6 +8,8 @@
 
     var proj = app.project;
 
+    var trimmedCount = 0;
+
     if (!proj) {
         alert("No project open.");
     } else {
@@ -40,10 +42,16 @@
                     // Reset work area
                     comp.workAreaStart = 0;
                     comp.workAreaDuration = duration;
+
+                    trimmedCount++;
                 }
             }
         }
     }
 
     app.endUndoGroup();
+
+    alert(
+        "Comps trimmed: " + trimmedCount
+    );
 }

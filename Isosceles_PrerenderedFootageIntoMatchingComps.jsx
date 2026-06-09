@@ -133,7 +133,7 @@
 
     var report = "";
 
-    report += "Matching footage added: " + addedCount;
+    report += "Matching footage added into " + addedCount + " comps";
 
     if (alreadyPresent.length > 0) {
         report += "\n\nAlready contained matching footage:\n";

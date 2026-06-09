@@ -18,6 +18,8 @@
             alert("Please enter a valid number for seconds.");
         } else {
 
+            var processedCount = 0;
+
             // Start undo group
             app.beginUndoGroup("Move CTI to " + targetTime + " seconds");
 
@@ -35,13 +37,20 @@
                     if (item instanceof CompItem) {
 
                         // Open comp in viewer
-                        app.executeCommand(app.findMenuCommandId("Open in Layer Panel"));
                         item.openInViewer();
 
                         // Move CTI
                         item.time = targetTime;
+
+                        processedCount++;
                     }
                 }
+
+                // Final summary alert
+                alert(
+                    "Target time set: " + targetTime + " seconds" + "\n" +
+                    "Comps affected: " + processedCount
+                );
             }
 
             // End undo group

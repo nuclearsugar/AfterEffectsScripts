@@ -18,7 +18,6 @@
         var frameInput = prompt("Enter number of frames to shorten the Work Area by:", "1");
 
         if (frameInput === null) {
-            // User cancelled
             return;
         }
 
@@ -29,6 +28,8 @@
             return;
         }
 
+        var processedComps = 0;
+
         app.beginUndoGroup("Shorten Work Area By Frames");
 
         for (var i = 0; i < selectedItems.length; i++) {
@@ -36,7 +37,6 @@
 
             if (comp instanceof CompItem) {
                 var frameDuration = comp.frameDuration;
-
                 var totalReduction = frameDuration * frames;
 
                 var newWorkAreaEnd = comp.workAreaStart + comp.workAreaDuration - totalReduction;
@@ -47,10 +47,17 @@
                 } else {
                     comp.workAreaDuration = frameDuration; // minimum 1 frame
                 }
+
+                processedComps++;
             }
         }
 
         app.endUndoGroup();
+
+        alert(
+            "Comps processed: " + processedComps + "\n" +
+            "Frames shortened per comp: " + frames
+        );
     }
 
     shortenWorkAreaByFrames();

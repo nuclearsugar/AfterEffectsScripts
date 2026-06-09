@@ -29,6 +29,8 @@
 
     app.beginUndoGroup("Create Seamless Loop");
 
+    var processedCount = 0;
+
     for (var i = 0; i < proj.selection.length; i++) {
 
         var comp = proj.selection[i];
@@ -70,8 +72,15 @@
 
         // Adjust comp duration
         comp.duration = newDuration;
+
+        processedCount++;
     }
 
     app.endUndoGroup();
+
+    alert(
+        "Comps processed: " + processedCount + "\n" +
+        "Crossfade applied: " + fadeFrames + " frames"
+    );
 
 })();

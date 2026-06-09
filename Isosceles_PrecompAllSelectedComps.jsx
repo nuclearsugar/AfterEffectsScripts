@@ -9,6 +9,9 @@
     var project = app.project;
     var selection = project.selection;
 
+    var processedCount = 0;
+    var skippedNoLayers = 0;
+
     if (selection.length === 0) {
         alert("Please select one or more compositions in the Project panel.");
     } else {
@@ -22,7 +25,10 @@
                 var comp = item;
                 var numLayers = comp.numLayers;
 
-                if (numLayers === 0) continue;
+                if (numLayers === 0) {
+                    skippedNoLayers++;
+                    continue;
+                }
 
                 var layerIndices = [];
 
@@ -38,9 +44,15 @@
                     true // move all attributes
                 );
 
+                processedCount++;
             }
 
         }
+
+        alert(
+            "Comps which were precomposed: " + processedCount + "\n" +
+            "Comps skipped (contained no layers): " + skippedNoLayers
+        );
     }
 
     app.endUndoGroup();

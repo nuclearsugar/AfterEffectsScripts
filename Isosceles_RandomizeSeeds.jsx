@@ -8,6 +8,9 @@
 
     var selectedItems = app.project.selection;
 
+    var modifiedCount = 0;
+    var compsAffected = 0;
+
     function isComp(item) {
         return item instanceof CompItem;
     }
@@ -25,7 +28,11 @@
             if (/seedRandom\(/.test(prop.expression) && /wiggle\(/.test(prop.expression)) {
                 var newSeed = randomInt(1, 10000);
                 var newExpr = updateSeedInExpression(prop.expression, newSeed);
-                prop.expression = newExpr;
+
+                if (newExpr !== prop.expression) {
+                    prop.expression = newExpr;
+                    modifiedCount++;
+                }
             }
         }
     }
@@ -42,15 +49,30 @@
         }
     }
 
+    function processComp(comp) {
+        var before = modifiedCount;
+
+        for (var j = 1; j <= comp.numLayers; j++) {
+            var layer = comp.layer(j);
+            processProperties(layer);
+        }
+
+        if (modifiedCount > before) {
+            compsAffected++;
+        }
+    }
+
     for (var i = 0; i < selectedItems.length; i++) {
         var comp = selectedItems[i];
         if (isComp(comp)) {
-            for (var j = 1; j <= comp.numLayers; j++) {
-                var layer = comp.layer(j);
-                processProperties(layer);
-            }
+            processComp(comp);
         }
     }
 
     app.endUndoGroup();
+
+    alert(
+        "Expressions updated: " + modifiedCount + "\n" +
+        "Comps affected: " + compsAffected
+    );
 })();

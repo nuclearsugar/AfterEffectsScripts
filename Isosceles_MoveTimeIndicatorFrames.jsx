@@ -21,7 +21,10 @@
 
             if (selectedItems.length === 0) {
                 alert("Please select at least one composition in the Project panel.");
+                app.endUndoGroup();
             } else {
+
+                var affectedComps = 0;
 
                 for (var i = 0; i < selectedItems.length; i++) {
                     var item = selectedItems[i];
@@ -37,12 +40,20 @@
 
                         // Move CTI
                         item.time = targetTime;
+
+                        affectedComps++;
                     }
                 }
-            }
 
-            // End undo group
-            app.endUndoGroup();
+                // End undo group
+                app.endUndoGroup();
+
+                // Final summary alert
+                alert(
+                    "Target frame set: " + targetFrame + "\n" +
+                    "Comps affected: " + affectedComps
+                );
+            }
 
         } else {
             alert("Please enter a valid non-negative frame number.");

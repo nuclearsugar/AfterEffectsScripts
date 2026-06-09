@@ -92,6 +92,7 @@
     }
 
     var count = START_NUMBER;
+    var renamedCount = 0;
 
     for (var i = 0; i < selection.length; i++) {
         var item = selection[i];
@@ -123,9 +124,17 @@
 
             item.name = newName;
             count++;
+            renamedCount++;
         }
     }
 
     app.endUndoGroup();
+
+    // =========================
+    // FINAL SUMMARY ALERT
+    // =========================
+    alert(
+        "Comps renamed: " + renamedCount
+    );
 
 })();
