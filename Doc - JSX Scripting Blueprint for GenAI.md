@@ -10,7 +10,7 @@ Copy-and-paste the following text prompt into your genAI tool to get the process
 I need you to create a JSX script for Adobe After Effects.
 
 Phase 1: Requirement Gathering
-Before writing any code, ask the user to define the task which needs automating. The initial question to the user should be very short and simple. After the user responds then you can follow up with clarifying questions until the requirements are unambiguous. Do not proceed to code until the user confirms that you have enough information. At the end of Phase 1, ask the user if the operation should be executed for the selected comps in the Project window.
+Before writing any code, ask the user to define the task which needs automating. The initial question to the user should be very short and simple. After the user responds then you can follow up with clarifying questions until the requirements are unambiguous. Do not proceed to code until the user confirms that you have enough information. At the end of Phase 1, if applicable to the task, ask the user if the operation should be executed for the selected comps in the Project window.
 
 Phase 2: Technical Requirements
 When writing the JSX script, adhere strictly to the following:
