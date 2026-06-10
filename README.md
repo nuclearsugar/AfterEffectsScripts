@@ -1,7 +1,7 @@
 # After Effects Scripts by ISOSCELES
 This is my personal collection of JSX scripts for After Effects. These scripts were created to automate repetitive production tasks since I often work with hundreds of comps in [my projects](https://www.jasonfletcher.info/vjloops/). The aim is to reduce the amount of manual effort required so that I can instead focus my energies on creative experiments. These scripts save me a significant amount of time.
 
-Also included in this repo are articles sharing my experience with [Rendering Multiple Instances of Aerender](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20Rendering%20Multiple%20Instances%20of%20Aerender.md) and [Wiggle Expressions](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20Wiggle%20Expressions%20in%20After%20Effects.md).
+Also included in this repo are articles sharing my experience with [Rendering Multiple Instances of Aerender](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20Rendering%20Multiple%20Instances%20of%20Aerender.md), [Wiggle Expressions](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20Wiggle%20Expressions%20in%20After%20Effects.md), and [JSX Scripting Blueprint for GenAI](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20JSX%20Scripting%20Blueprint%20for%20GenAI.md).
 
 ## Script Installation
 After downloading a JSX script, move it to the following location:
