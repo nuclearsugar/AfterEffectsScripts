@@ -2,7 +2,7 @@
 
 Here is the text prompt that I use to have a genAI tool create a JSX script for After Effects.
 
-Copy-and-paste the following into your genAI tool to get rolling:
+Copy-and-paste the following text prompt into your genAI tool to get the process started:
 
 <hr style="border: none; border-top: 1px solid #d0d7de;">
 
