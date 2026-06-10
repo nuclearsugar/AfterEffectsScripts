@@ -1,4 +1,4 @@
-# Rendering Multiple Instances of Aerender
+# Rendering Multiple Instances via Aerender
 Adobe After Effects (AE) is typically a lightly threaded app while rendering, even with [Multi-Frame Rendering](https://helpx.adobe.com/after-effects/using/multi-frame-rendering.html) enabled. This means that your CPU cores likely aren't being fully utilized and you have the option of running multiple AE render engines at the same time. This is possible through the use of the [Aerender](https://helpx.adobe.com/after-effects/using/automated-rendering-network-rendering.html) executable, which is installed by default, but has no GUI and can only be interacted with via a command line prompt. This works fine even when your comps are using AE plugins which you've purchased. This is a guide of how to get multiple render instances rolling. No special tools need to be installed.
 
 ## When is this technique necessary?
