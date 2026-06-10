@@ -6,45 +6,58 @@
 {
     app.beginUndoGroup("Precompose Selected Comps");
 
-    var project = app.project;
-    var selection = project.selection;
+    try {
 
-    if (selection.length === 0) {
-        alert("Please select one or more compositions in the Project panel.");
-        app.endUndoGroup();
-    } else {
+        var project = app.project;
+        var selection = project.selection;
 
-        // --------------------------------------------------
-        // Create / get folder: "Precomped via script"
-        // --------------------------------------------------
+        var processedCount = 0;
+        var skippedNoLayers = 0;
+
+        // -------------------------------------------------
+        // Find or create destination folder
+        // -------------------------------------------------
+        var precompFolder = null;
         var folderName = "Precomped via script";
-        var targetFolder = null;
 
-        for (var i = 1; i <= project.rootFolder.numItems; i++) {
-            var item = project.rootFolder.item(i);
-            if (item instanceof FolderItem && item.name === folderName) {
-                targetFolder = item;
+        for (var f = 1; f <= project.numItems; f++) {
+            if (
+                project.item(f) instanceof FolderItem &&
+                project.item(f).name === folderName
+            ) {
+                precompFolder = project.item(f);
                 break;
             }
         }
 
-        if (!targetFolder) {
-            targetFolder = project.items.addFolder(folderName);
+        if (precompFolder === null) {
+            precompFolder = project.items.addFolder(folderName);
         }
 
-        // --------------------------------------------------
-        // Process selected comps
-        // --------------------------------------------------
-        for (var i = 0; i < selection.length; i++) {
+        // -------------------------------------------------
+        // Validate selection
+        // -------------------------------------------------
+        if (selection.length === 0) {
 
-            var item = selection[i];
+            alert("Please select one or more compositions in the Project panel.");
 
-            if (item instanceof CompItem) {
+        } else {
+
+            for (var i = 0; i < selection.length; i++) {
+
+                var item = selection[i];
+
+                if (!(item instanceof CompItem)) {
+                    continue;
+                }
 
                 var comp = item;
                 var numLayers = comp.numLayers;
 
-                if (numLayers === 0) continue;
+                if (numLayers === 0) {
+                    skippedNoLayers++;
+                    continue;
+                }
 
                 var layerIndices = [];
 
@@ -54,20 +67,53 @@
 
                 var newName = comp.name + "_PRECOMP";
 
-                // IMPORTANT: capture returned precomp
-                var newPrecomp = comp.layers.precompose(
+                // Create the precomp
+                comp.layers.precompose(
                     layerIndices,
                     newName,
                     true // move all attributes
                 );
 
-                // Move precomp into folder
-                if (newPrecomp instanceof CompItem) {
-                    newPrecomp.parentFolder = targetFolder;
-                }
-            }
-        }
-    }
+                // -------------------------------------------------
+                // Locate the newly created precomp and move it
+                // -------------------------------------------------
+                var createdPrecomp = null;
 
-    app.endUndoGroup();
+                for (var k = project.numItems; k >= 1; k--) {
+                    var projItem = project.item(k);
+
+                    if (
+                        projItem instanceof CompItem &&
+                        projItem.name === newName
+                    ) {
+                        createdPrecomp = projItem;
+                        break;
+                    }
+                }
+
+                if (createdPrecomp !== null) {
+                    createdPrecomp.parentFolder = precompFolder;
+                }
+
+                processedCount++;
+            }
+
+            alert(
+                "Comps which were precomposed: " + processedCount + "\n" +
+                "Comps skipped (contained no layers): " + skippedNoLayers
+            );
+        }
+
+    } catch (err) {
+
+        alert(
+            "Error: " + err.toString() +
+            (err.line ? "\nLine: " + err.line : "")
+        );
+
+    } finally {
+
+        app.endUndoGroup();
+
+    }
 }
