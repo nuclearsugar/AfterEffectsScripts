@@ -19,7 +19,7 @@ wiggle(freq, amp, octaves = 1, amp_mult = 0.5, time = time)
 ```
 
 ## Wiggle the scale and affect both X and Y in lockstep
-This expression applies a repeatable wiggle that updates at 0.5 times per second with an amplitude of 50, using the same randomly generated value for both the X and Y components so they move together uniformly.
+This expression applies a repeatable wiggle that updates at 0.5 times per second with an amplitude of 50%, using a single randomly generated value and applying it equally to both scale dimensions so the layer scales proportionally in lockstep.
 ```
 seedRandom(654, true);
 w = wiggle(0.5, 50)[0]; // Get the X component of the wiggle
