@@ -1,6 +1,6 @@
 # Wiggle Expressions in After Effects
 
-## Use the wiggle command to randomize an attribute
+## Use the wiggle expression to randomize an attribute
 - Explanation: `seedRandom(937, true)`
   - 937 is the seed. Use the same seed if you want multiple layers (or comps) to share identical random behavior, or use different seeds if you want each layer (or comp) to generate its own independent random pattern.
 - Explanation: `wiggle(4,100)`
@@ -12,7 +12,7 @@ seedRandom(937, true);
 wiggle(4,10)
 ```
 
-### Optional Advanced Parameters of Wiggle
+### Optional advanced parameters of Wiggle
 ```
 seedRandom(1, true);
 wiggle(freq, amp, octaves = 1, amp_mult = 0.5, time = time)
