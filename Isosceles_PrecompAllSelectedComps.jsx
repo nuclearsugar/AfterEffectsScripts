@@ -17,15 +17,13 @@
         // -------------------------------------------------
         // Find or create destination folder
         // -------------------------------------------------
-        var precompFolder = null;
         var folderName = "Precomped via script";
+        var precompFolder = null;
 
         for (var f = 1; f <= project.numItems; f++) {
-            if (
-                project.item(f) instanceof FolderItem &&
-                project.item(f).name === folderName
-            ) {
-                precompFolder = project.item(f);
+            var item = project.item(f);
+            if (item instanceof FolderItem && item.name === folderName) {
+                precompFolder = item;
                 break;
             }
         }
@@ -45,53 +43,38 @@
 
             for (var i = 0; i < selection.length; i++) {
 
-                var item = selection[i];
+                var comp = selection[i];
 
-                if (!(item instanceof CompItem)) {
+                if (!(comp instanceof CompItem)) {
                     continue;
                 }
 
-                var comp = item;
-                var numLayers = comp.numLayers;
-
-                if (numLayers === 0) {
+                if (comp.numLayers === 0) {
                     skippedNoLayers++;
                     continue;
                 }
 
+                // Build layer index array
                 var layerIndices = [];
-
-                for (var j = 1; j <= numLayers; j++) {
+                for (var j = 1; j <= comp.numLayers; j++) {
                     layerIndices.push(j);
                 }
 
                 var newName = comp.name + "_PRECOMP";
 
-                // Create the precomp
-                comp.layers.precompose(
+                // -------------------------------------------------
+                // Precompose and CAPTURE returned comp directly
+                // -------------------------------------------------
+                var createdPrecomp = comp.layers.precompose(
                     layerIndices,
                     newName,
                     true // move all attributes
                 );
 
                 // -------------------------------------------------
-                // Locate the newly created precomp and move it
+                // Move new comp safely (no name searching)
                 // -------------------------------------------------
-                var createdPrecomp = null;
-
-                for (var k = project.numItems; k >= 1; k--) {
-                    var projItem = project.item(k);
-
-                    if (
-                        projItem instanceof CompItem &&
-                        projItem.name === newName
-                    ) {
-                        createdPrecomp = projItem;
-                        break;
-                    }
-                }
-
-                if (createdPrecomp !== null) {
+                if (createdPrecomp !== null && createdPrecomp instanceof CompItem) {
                     createdPrecomp.parentFolder = precompFolder;
                 }
 
@@ -114,6 +97,5 @@
     } finally {
 
         app.endUndoGroup();
-
     }
 }
