@@ -19,7 +19,7 @@
                 }
                 
                 app.endUndoGroup();
-                alert("Rotation keyframes randomized between -180° and +180°!");
+                alert("Rotation keyframes randomized between -180° and +180°");
             } else {
                 alert("Selected layer has no rotation keyframes.");
             }
