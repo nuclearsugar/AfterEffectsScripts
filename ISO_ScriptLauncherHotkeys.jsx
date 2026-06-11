@@ -155,9 +155,15 @@
 
                     var scripts = groups[folderName];
 
-                    scripts.sort(function (a, b) {
-                        return sortAlpha(a.name, b.name);
-                    });
+                scripts.sort(function (a, b) {
+
+                    var aName = hardDecode(a.name).toLowerCase();
+                    var bName = hardDecode(b.name).toLowerCase();
+
+                    if (aName < bName) return -1;
+                    if (aName > bName) return 1;
+                    return 0;
+                });
 
                     for (var j = 0; j < scripts.length; j++) {
 
