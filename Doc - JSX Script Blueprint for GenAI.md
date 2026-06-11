@@ -1,4 +1,4 @@
-# JSX Scripting Blueprint for GenAI
+# JSX Script Blueprint for GenAI
 
 Here is the text prompt that I use to have a genAI tool create a JSX script for After Effects.
 
