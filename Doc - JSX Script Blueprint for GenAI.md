@@ -1,6 +1,6 @@
 # JSX Script Blueprint for GenAI
 
-There are a few important pitfalls that genAI tools often miss when creating JSX scripts for After Effects. So this text prompt provides guardrails and best practices to improve it's reliability.
+There are a few important pitfalls that genAI tools often run into when creating JSX scripts for After Effects. So this text prompt provides guardrails and best practices to improve it's reliability.
 
 Copy-and-paste the following text prompt into your genAI tool to get jumpstarted.
 
