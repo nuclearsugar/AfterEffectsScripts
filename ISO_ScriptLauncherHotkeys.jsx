@@ -5,7 +5,7 @@
 // Description: This After Effects script will create a GUI so that the user can select a script and then execute it by clicking the "execute script" button or via hotkeys. 
 // Hotkeys: The hotkeys (0-9) can be assigned by clicking on a script and then clicking on a hotkey button. Then just hit the hotkey on the keyboard to execute the script.
 // QUIRK ABOUT HOTKEYS: After pressing a hotkey then you must click in the Scripts Listing area or Log area for a subsequent hotkey to function. This is due to a limitation with JSX scripts.
-// Indexing: This script will auto index all JSX and JSXBIN scripts located within the same folder as this script (subfolders too) or user can select the root folder manually by clicking the "Change Dir" button. If you install a script while After Effects is still open then you can click the "Refresh Dir" button.
+// Indexing: This script will auto index all JSX and JSXBIN scripts located within the same folder as this script (subfolders too) or user can select the root folder manually by clicking the "Change Dir" button. If the user manually changes the root folder, then the path is saved as a setting and used when the script is opened again in the future. If you install a script while After Effects is still open then you can click the "Refresh Dir" button.
 // Installation Option 1: If you prefer for this script to be a dockable window, then install it within the <ScriptUI panels> folder. When you use the script you'll likely want to manually point it to the <Scripts> folder, which can be achieved by clicking the "Change Dir" button.
 // Installation Option 2: If you prefer for this script to be a floating window, then install it within the <Scripts> folder. It will automatically index all available scripts from this location.
 
@@ -30,7 +30,25 @@
             for (var h = 0; h < 10; h++) hotkeyMap[h] = null;
 
             var selectedItem = null;
+
+            // =========================
+            // PERSISTENT ROOT FOLDER
+            // =========================
+            var SETTINGS_SECTION = "ISO_ScriptLauncherHotkeys";
+            var SETTINGS_KEY = "rootFolderPath";
+
             var rootFolder = File($.fileName).parent;
+
+            // Load saved root folder if it exists
+            if (app.settings.haveSetting(SETTINGS_SECTION, SETTINGS_KEY)) {
+                var savedPath = app.settings.getSetting(SETTINGS_SECTION, SETTINGS_KEY);
+                var testFolder = new Folder(savedPath);
+
+                if (testFolder.exists) {
+                    rootFolder = testFolder;
+                }
+            }
+
             var firstRun = true;
 
             // HOTKEY PANEL
@@ -155,15 +173,15 @@
 
                     var scripts = groups[folderName];
 
-                scripts.sort(function (a, b) {
+                    scripts.sort(function (a, b) {
 
-                    var aName = hardDecode(a.name).toLowerCase();
-                    var bName = hardDecode(b.name).toLowerCase();
+                        var aName = hardDecode(a.name).toLowerCase();
+                        var bName = hardDecode(b.name).toLowerCase();
 
-                    if (aName < bName) return -1;
-                    if (aName > bName) return 1;
-                    return 0;
-                });
+                        if (aName < bName) return -1;
+                        if (aName > bName) return 1;
+                        return 0;
+                    });
 
                     for (var j = 0; j < scripts.length; j++) {
 
@@ -277,6 +295,10 @@
                 var newFolder = Folder.selectDialog("Select root folder to index scripts");
                 if (newFolder) {
                     rootFolder = newFolder;
+
+                    // SAVE PERSISTENT ROOT FOLDER
+                    app.settings.saveSetting(SETTINGS_SECTION, SETTINGS_KEY, rootFolder.fsName);
+
                     addLog("Root changed: " + rootFolder.fsName);
                     refreshList();
                 }
