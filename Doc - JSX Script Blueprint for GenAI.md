@@ -1,8 +1,8 @@
 # JSX Script Blueprint for GenAI
 
-Here is the text prompt that I use to have a genAI tool create a JSX script for After Effects.
+There are a few important pitfalls that genAI tools often miss when creating JSX scripts for After Effects. So this text prompt provides guardrails and best practices to improve it's reliability.
 
-Copy-and-paste the following text prompt into your genAI tool to get the process started:
+Copy-and-paste the following text prompt into your genAI tool to get jumpstarted.
 
 <hr style="border: none; border-top: 1px solid #d0d7de;">
 
