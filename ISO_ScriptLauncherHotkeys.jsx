@@ -6,8 +6,8 @@
 // Hotkeys: The hotkeys (0-9) can be assigned by clicking on a script and then clicking on a hotkey button. Then just hit the hotkey on the keyboard to execute the script.
 // QUIRK ABOUT HOTKEYS: After pressing a hotkey then you must click in the Scripts Listing area or Log area for a subsequent hotkey to function. This is due to a limitation with JSX scripts.
 // Indexing: This script will auto index all JSX and JSXBIN scripts located within the same folder as this script (subfolders too) or user can select the root folder manually by clicking the "Change Dir" button. If you install a script while After Effects is still open then you can click the "Refresh Dir" button.
-// Installation Option 1 - Dockable Window Option: If you prefer for this script to be a dockable window, then install this script within the <ScriptUI panels> folder. You'll likely want to manually point it to the <Scripts> folder, which can be archived by clicking the "Change Dir" button.
-// Installation Option 2 - Floating Window Option: If you prefer for this script to be a floating window, then install this folder within the <Scripts> folder.
+// Installation Option 1: If you prefer for this script to be a dockable window, then install it within the <ScriptUI panels> folder. When you use the script you'll likely want to manually point it to the <Scripts> folder, which can be archived by clicking the "Change Dir" button.
+// Installation Option 2 : If you prefer for this script to be a floating window, then install it within the <Scripts> folder. It will automatically index all available scripts from this location.
 
 (function (thisObj) {
 
