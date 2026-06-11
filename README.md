@@ -48,6 +48,6 @@ These scripts were vibecoded using the various model versions of ChatGPT (free v
 
 If a script isn't working correctly for your needs then I'd recommend pasting the code into a genAI tool and telling it what you need tweaked or the error you're seeing.
 
-If you wish to create your own script, consider using my [JSX Scripting Blueprint for GenAI](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20JSX%20Scripting%20Blueprint%20for%20GenAI.md) as a starting point.
+If you wish to create your own script, consider using my [JSX Scripting Blueprint for GenAI](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20JSX%20Script%20Blueprint%20for%20GenAI.md) as a starting point.
 
 I'm unable to provide support or guarantee compatibility that these scripts will function with future versions of After Effects. Please feel free to fork and modify these scripts to suit your needs. Shared using the GPL-3.0 license. Cheers!
