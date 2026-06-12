@@ -76,7 +76,7 @@ pause
 - If you need to stop rendering prematurely, first close the command prompt windows. Then open up the Task Manager >>> Processes tab >>> and force quit each process (x4) named "Adobe After Effects 2026".
 - Beware: the typical CTRL+C hotkey which stops a process running in a command prompt window, actually does not end the "Adobe After Effects 2026" process. The process must be stopped manually.
 - If you need to resume the renders, you'll need to open up the AE projects and manually remove the items from the render queue that have been completed. It's not ideal, but that's just a caveat of this technique.
-  - I keep forgetting to test it, but I've read that if you're rendering to a frame sequence then you can enable "Skip Existing Files" in the Render Settings window and then you don't need to edit the render queue when resuming a render. But beware of the next bullet.
+  - I keep forgetting to test it, but I've read that if you're rendering to a frame sequence then you can enable "Skip Existing Files" in the Render Settings window and then you don't need to edit the render queue before resuming a render. But beware of the next bullet.
 - For very heavy renders or long duration comps, I'd recommend rendering using a PNG sequence or JPG sequence since you can resume rendering from where the last frame left off. Although when resuming a render, always delete the last frame since the file could be incomplete or corrupted if the AE render engine happened to be force quitted while in the process of writing the file.
 
 ## Tip: Queue Up Multiple AE Projects
