@@ -4,9 +4,9 @@ This is my personal collection of JSX scripts for After Effects. These scripts w
 Also included in this repo are articles sharing my experience with [Rendering Multiple Instances of Aerender](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20Rendering%20Multiple%20Instances%20via%20Aerender.md), [Wiggle Expressions](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20Wiggle%20Expressions%20in%20After%20Effects.md), and [JSX Script Blueprint for GenAI](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20JSX%20Script%20Blueprint%20for%20GenAI.md).
 
 ## Script Installation
-After downloading a JSX script, move it to the following location:
-- Windows: `Program Files\Adobe\Adobe After Effects <version>\Support Files\Scripts`
-- MasOS: `Applications\Adobe After Effects <version>\Scripts`
+Windows: `Program Files\Adobe\Adobe After Effects <version>\Support Files\Scripts`
+
+MasOS: `Applications\Adobe After Effects <version>\Scripts`
 
 ## Script Usage
 To run a JSX script within After Effects...
