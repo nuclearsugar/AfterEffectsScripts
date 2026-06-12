@@ -18,7 +18,7 @@ I've used this technique extensively on Windows 11.
 - You need to prepare one AE project for each render instance that you plan on running. For this tutorial I will be running x4 instances.
 - Open up each of your AE projects and add comps into the render queue. It could be the exact same AE project and just duplicated four times. Set all of your render settings and file destinations as per usual in the built-in AE render queue. When you're done with this task then you should close AE to free up the RAM.
 - For example: Suppose you have an AE project with 400 comps. Then <AE-Project-1.aep> will have comps 1-100 in the render queue, <AE-Project-2.aep> will have comps 101-200 in the render queue, <AE-Project-3.aep> will have comps 201-300 in the render queue, and <AE-Project-4.aep> will have comps 301-400 in the render queue,
-- To shortcut this process, check out the [ISO_RenderQueueSplitIntoSeperateProjects.jsx](https://raw.githubusercontent.com/nuclearsugar/AfterEffectsScripts/refs/heads/main/ISO_RenderQueueSplitIntoSeperateProjects.jsx) script which takes the selected comps in the Project window, splits them into fixed-size batches (N per batch), adds each batch to the Render Queue, and saves a separate After Effects project file for each batch.
+- To shortcut this process, check out my [ISO_RenderQueueSplitIntoSeperateProjects.jsx](https://raw.githubusercontent.com/nuclearsugar/AfterEffectsScripts/refs/heads/main/ISO_RenderQueueSplitIntoSeperateProjects.jsx) script which takes the selected comps in the Project window, splits them into fixed-size batches (N per batch), adds each batch to the Render Queue, and saves a separate After Effects project file for each batch.
 
 ## Step 3) Prep your BAT Files
 - Open up the [Notepad++](https://notepad-plus-plus.org/) app (or any text editor) and create 4 new documents. Save these files to your desktop and name them <Batch-Render-Instance1.bat>, <Batch-Render-Instance2.bat>, <Batch-Render-Instance3.bat>, and <Batch-Render-Instance4.bat>.
@@ -83,7 +83,7 @@ pause
 ## Tip: Render Multiple AE Projects Back-to-Back
 - You can string together multiple AE projects so that they render back-to-back. This is effectively a queue of AE projects, with each AE project containing its own render queue. A queue of queues... blasphemy!
 - This is useful if you have tons of different AE projects that need to be rendered out.
-- It's also useful if you have thousands of comps within a single AE project. In this case, check out this script: [ISO_RenderQueueSplitIntoSeperateProjects.jsx](https://raw.githubusercontent.com/nuclearsugar/AfterEffectsScripts/refs/heads/main/ISO_RenderQueueSplitIntoSeperateProjects.jsx)
+- It's also useful if you have thousands of comps within a single AE project. To shortcut this process, check out my [ISO_RenderQueueSplitIntoSeperateProjects.jsx](https://raw.githubusercontent.com/nuclearsugar/AfterEffectsScripts/refs/heads/main/ISO_RenderQueueSplitIntoSeperateProjects.jsx) script.
 - Any computer that can render AE can handle this setup since it's just a single instance. For example:
 
 <Batch-Render-Instance1.bat>
