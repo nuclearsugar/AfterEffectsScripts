@@ -6,7 +6,7 @@ Also included in this repo are articles sharing my experience with [Rendering Mu
 ## Script Installation
 Windows: `Program Files\Adobe\Adobe After Effects <version>\Support Files\Scripts`
 
-MasOS: `Applications\Adobe After Effects <version>\Scripts`
+MacOS: `Applications\Adobe After Effects <version>\Scripts`
 
 ## Script Usage
 To run a JSX script within After Effects...
