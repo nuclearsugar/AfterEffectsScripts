@@ -9,9 +9,11 @@ Windows: `Program Files\Adobe\Adobe After Effects <version>\Support Files\Script
 MacOS: `Applications\Adobe After Effects <version>\Scripts`
 
 ## Script Usage
-To run a JSX script within After Effects...
+- To run a JSX script within After Effects...
+  - `Open After Effects >>> File menu >>> Scripts >>> choose a script to execute`
+- Or you can assign custom hotkeys to run your favorite scripts
+  - `Open After Effects >>> Edit menu >>> Keyboard Shortcuts >>> type "script" into the search field`
 
-`Open After Effects >>> File menu >>> Scripts >>> choose a script to execute`
 
 ## Script Summary
 - [ISO_ChangeAlphaToIgnore.jsx](https://raw.githubusercontent.com/nuclearsugar/AfterEffectsScripts/refs/heads/main/ISO_ChangeAlphaToIgnore.jsx) - This script will set “Alpha: Ignore” (within the Interpret Footage window) for all the selected footage items in the Project window.
