@@ -23,6 +23,8 @@
         var newPos;
         var processed = 0;
         var skipped = 0;
+        var currentTime;
+        var keyIndex;
 
         if (!(activeItem instanceof CompItem)) {
             alert("Please open and activate a composition.");
@@ -98,6 +100,8 @@
             return;
         }
 
+        currentTime = activeItem.time;
+
         // ---------------------------------------------------------------------
         // Process Layers
         // ---------------------------------------------------------------------
@@ -113,18 +117,36 @@
 
             pos = layer.property("Transform").property("Position");
 
-            if (pos === null || pos.numKeys > 0 || pos.expressionEnabled) {
+            if (pos === null || pos.expressionEnabled) {
                 skipped++;
                 continue;
             }
 
-            newPos = pos.value;
+            // Get the current value (interpolated if animated)
+            newPos = pos.valueAtTime(currentTime, false);
 
+            // Randomize X and Y
             newPos[0] = minX + Math.random() * (maxX - minX);
             newPos[1] = minY + Math.random() * (maxY - minY);
 
-            // Preserve Z position for 3D layers
-            pos.setValue(newPos);
+            if (pos.numKeys > 0) {
+
+                keyIndex = pos.nearestKeyIndex(currentTime);
+
+                // If a keyframe already exists at the current time, overwrite it.
+                if (Math.abs(pos.keyTime(keyIndex) - currentTime) < 0.0001) {
+                    pos.setValueAtKey(keyIndex, newPos);
+                } else {
+                    // Otherwise create a new keyframe.
+                    pos.setValueAtTime(currentTime, newPos);
+                }
+
+            } else {
+
+                // No keyframes yet, so create the first one.
+                pos.setValueAtTime(currentTime, newPos);
+
+            }
 
             processed++;
         }
