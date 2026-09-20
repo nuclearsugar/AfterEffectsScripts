@@ -1,4 +1,4 @@
-# JSX Script Blueprint for GenAI
+# JSX Script Harness for GenAI
 
 There are a few important pitfalls that genAI tools often run into when creating JSX scripts for After Effects. So this text prompt provides guardrails and best practices to improve its reliability.
 
