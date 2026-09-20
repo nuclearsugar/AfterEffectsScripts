@@ -1,7 +1,7 @@
 # After Effects Scripts by ISOSCELES
 This is my personal collection of JSX scripts for After Effects. These scripts were created to automate repetitive production tasks since I often work with hundreds of comps in [my projects](https://www.jasonfletcher.info/vjloops/). The aim is to reduce the amount of manual effort required so that I can instead focus my energies on creative experiments. These scripts save me a significant amount of time.
 
-Also included in this repo are articles sharing my experience with [Rendering Multiple Instances](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20Rendering%20Multiple%20Instances%20via%20Aerender.md), [Wiggle Expressions](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20Wiggle%20Expressions%20in%20After%20Effects.md), and [JSX Script Blueprint for GenAI](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20JSX%20Script%20Blueprint%20for%20GenAI.md).
+Also included in this repo are articles sharing my experience with [Rendering Multiple Instances](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20Rendering%20Multiple%20Instances%20via%20Aerender.md), [Wiggle Expressions](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20Wiggle%20Expressions%20in%20After%20Effects.md), and [JSX Script Harness for GenAI](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20JSX%20Script%20Harness%20for%20GenAI.md).
 
 ## Script Installation
 Windows: `Program Files\Adobe\Adobe After Effects <version>\Support Files\Scripts`
@@ -63,6 +63,6 @@ MacOS: `Applications\Adobe After Effects <version>\Scripts`
 ## Credits
 These scripts were vibecoded using the various model versions of ChatGPT (free version). Each script was created for a specific issue I was facing at the time and so these scripts have actually been used in production (using After Effects 2025-2026). That said, some of these scripts have a specific use-case and may not behave as expected in different scenarios. Use these scripts at your own risk.
 
-If you need to tweak, fix, or create your own script then consider using my [JSX Scripting Blueprint for GenAI](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20JSX%20Script%20Blueprint%20for%20GenAI.md) as a starting point.
+If you need to tweak, fix, or create your own script then consider using my [JSX Scripting Harness for GenAI](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20JSX%20Script%20Harness%20for%20GenAI.md) as a starting point.
 
 I'm unable to provide support or guarantee compatibility that these scripts will function with future versions of After Effects. Please feel free to fork and modify these scripts to suit your needs. Shared using the GPL-3.0 license. Cheers!
