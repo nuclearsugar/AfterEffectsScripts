@@ -63,6 +63,6 @@ MacOS: `Applications\Adobe After Effects <version>\Scripts`
 ## Credits
 These scripts were vibecoded using the various model versions of ChatGPT (free version). Each script was created for a specific issue I was facing at the time and so these scripts have actually been used in production (using After Effects 2025-2026). That said, some of these scripts have a specific use-case and may not behave as expected in different scenarios. Use these scripts at your own risk.
 
-If you need to tweak, fix, or create your own script then consider using my [JSX Scripting Harness for GenAI](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20JSX%20Script%20Harness%20for%20GenAI.md) as a starting point.
+If you need to tweak, fix, or create your own script then consider using my [JSX Script Harness for GenAI](https://github.com/nuclearsugar/AfterEffectsScripts/blob/main/Doc%20-%20JSX%20Script%20Harness%20for%20GenAI.md) as a starting point.
 
 I'm unable to provide support or guarantee compatibility that these scripts will function with future versions of After Effects. Please feel free to fork and modify these scripts to suit your needs. Shared using the GPL-3.0 license. Cheers!
